@@ -1,0 +1,23 @@
+    <div class="row">
+        <div class="s12" ng-repeat="tab in tabs track by $index">
+            <!-- besoin de boucler ! -->
+            <div>
+                <div><i class="material-icons">person</i>{{tab[0].name.first}}, {{tab[$0].name.last}}</div>
+                <div><i class="material-icons">work</i>{{tab[0].company}}</div>
+                <div><i class="material-icons">email</i>{{tab[0].email}}</div>
+                <div><i class="material-icons">phone</i>{{tab[0].phone}}{{0}}</div>
+                <div>
+                    <h5>Notes</h5>
+                    <div ng-repeat="t in tab track by $index" ng-show='tab[$index + 1].content !== undifined'>
+                        <div>
+                            <div><span>#{{$index + 1}}</span></div>
+                            <p>{{tab[$index + 1].content}}</p>
+                        </div>
+                        <div>
+                            ...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
